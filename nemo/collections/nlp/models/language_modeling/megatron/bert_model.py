@@ -241,7 +241,6 @@ class BertModel(MegatronModule):
         self.initialize_word_embeddings(
             init_method=init_method_normal(init_method_std), vocab_size=vocab_size, hidden_size=hidden_size
         )
-
         if self.post_process:
             self.lm_head = BertLMHead(
                 self.word_embeddings_weight().size(0),
